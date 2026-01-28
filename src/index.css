@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 16 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 10% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 10% 16%;
+    --muted-foreground: 240 5% 55%;
+
+    --accent: 16 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 16 100% 60%;
+
+    --radius: 1rem;
+
+    /* Custom gym theme colors */
+    --push: 16 100% 60%;
+    --pull: 200 100% 50%;
+    --legs: 280 80% 60%;
+    --rest: 240 10% 30%;
+    
+    /* Gradients */
+    --gradient-push: linear-gradient(135deg, hsl(16 100% 60%), hsl(30 100% 50%));
+    --gradient-pull: linear-gradient(135deg, hsl(200 100% 50%), hsl(180 100% 45%));
+    --gradient-legs: linear-gradient(135deg, hsl(280 80% 60%), hsl(260 80% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(240 10% 12%), hsl(240 10% 8%));
+    --gradient-glow: radial-gradient(circle at 50% 0%, hsl(16 100% 60% / 0.15), transparent 50%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.5);
+    --shadow-md: 0 8px 24px -8px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 40px -10px hsl(16 100% 60% / 0.4);
+
+    --sidebar-background: 240 10% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 16 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 16%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 16 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: var(--gradient-glow);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(30 100% 55%));
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .workout-push {
+    background: var(--gradient-push);
+  }
+
+  .workout-pull {
+    background: var(--gradient-pull);
+  }
+
+  .workout-legs {
+    background: var(--gradient-legs);
+  }
+
+  .workout-rest {
+    @apply bg-muted;
+  }
+}
