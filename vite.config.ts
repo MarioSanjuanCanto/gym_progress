@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Use a sub-path in production so the app works on GitHub Pages.
+  // If your repo name is different, change "gym_progress" below.
+  base: mode === "development" ? "/" : "/gym_progress/",
   server: {
     host: "::",
     port: 8080,
